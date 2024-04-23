@@ -1,0 +1,4 @@
+/venv/
+.sconsign.dblite
+*.out
+*.vcd
