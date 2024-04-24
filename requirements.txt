@@ -4,3 +4,4 @@ pyserial
 jupyter
 ipympl
 ipywidgets
+bqplot

@@ -12,7 +12,7 @@ module main (
 );
 
 localparam CLK_FREQ = 36_750_000; // 36.75 MHz
-localparam ADC_FREQ = 100_000; // 100 kHz
+localparam ADC_FREQ = 10_000; // 10 kHz
 
 wire start_w;
 wire rdy_w;
