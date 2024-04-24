@@ -11,6 +11,9 @@ module main (
     output wire [11:0] dac_o      // Output to external R-2R ladder DAC
 );
 
+localparam CLK_FREQ = 36_750_000; // 36.75 MHz
+localparam ADC_FREQ = 100_000; // 100 kHz
+
 wire start_w;
 wire rdy_w;
 wire clk_div_w;
@@ -23,8 +26,8 @@ pll i_pll (
 );
 
 frequency_divider #(
-    .CLK_FREQ(36_750_000),
-    .OUT_FREQ(100)
+    .CLK_FREQ(CLK_FREQ),
+    .OUT_FREQ(ADC_FREQ)
 ) i_frequency_divider (
     .divided_o(clk_div_w),
     .clk_i(clk_pll_w),

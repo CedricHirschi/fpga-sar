@@ -2,5 +2,7 @@
 .sconsign.dblite
 *.out
 *.vcd
-hardware.json
-abc.history
+*.json
+*.history
+*.asc
+*.bin

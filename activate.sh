@@ -18,9 +18,9 @@ elif [ -d "venv/bin" ]; then
     source venv/bin/activate
 fi
 
-# Install apio if not installed
-if ! command -v apio &> /dev/null
+# Install apio if not installed or second argument is passed
+if [ ! -d "apio" ] || [ "$2" == "install" ];
 then
-    echo "Installing apio"
-    pip install apio
+    echo "Installing requirements"
+    pip install -r requirements.txt -q --require-virtualenv --no-input
 fi

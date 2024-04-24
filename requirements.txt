@@ -1,0 +1,6 @@
+apio
+packaging
+pyserial
+jupyter
+ipympl
+ipywidgets
