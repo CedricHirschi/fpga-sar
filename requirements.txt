@@ -5,3 +5,4 @@ jupyter
 ipympl
 ipywidgets
 bqplot
+pygame
