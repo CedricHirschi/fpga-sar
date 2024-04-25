@@ -8,30 +8,30 @@ set_io uart_rx_i 6
 
 set_io uart_tx_o 9
 
-set_io comp_i 48
+set_io comp_i 2
 
-set_io dac_o[0] 28
+set_io dac_o[0] 31
 
-set_io dac_o[1] 31
+set_io dac_o[1] 28
 
-set_io dac_o[2] 32
+set_io dac_o[2] 34
 
-set_io dac_o[3] 34
+set_io dac_o[3] 32
 
-set_io dac_o[4] 36
+set_io dac_o[4] 38
 
-set_io dac_o[5] 38
+set_io dac_o[5] 36
 
-set_io dac_o[6] 42
+set_io dac_o[6] 43
 
-set_io dac_o[7] 43
+set_io dac_o[7] 42
 
-set_io dac_o[8] 44
+set_io dac_o[8] 45
 
-set_io dac_o[9] 45
+set_io dac_o[9] 44
 
-set_io dac_o[10] 46
+set_io dac_o[10] 47
 
-set_io dac_o[11] 47
+set_io dac_o[11] 46
 
 set_io rdy_o 37
