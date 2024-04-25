@@ -1,4 +1,8 @@
-module main (
+module main #(
+    parameter RESOLUTION = 12,
+    parameter CLK_FREQ = 36_750_000,
+    parameter ADC_FREQ = 10_000
+) (
     input wire rst_ni,               // Asynchronous reset
     input wire clk_i,                 // Clock input
 
@@ -8,11 +12,8 @@ module main (
     input wire comp_i,      // Input from external analog comparator
     output wire start_o,              // Start conversion signal
     output wire rdy_o,              // Conversion complete signal
-    output wire [11:0] dac_o      // Output to external R-2R ladder DAC
+    output wire [RESOLUTION-1:0] dac_o      // Output to external R-2R ladder DAC
 );
-
-localparam CLK_FREQ = 36_750_000; // 36.75 MHz
-localparam ADC_FREQ = 10_000; // 10 kHz
 
 wire start_w;
 wire rdy_w;
@@ -35,7 +36,7 @@ frequency_divider #(
 );
 
 sar_adc #(
-    .RESOLUTION(12)
+    .RESOLUTION(RESOLUTION)
 ) i_sar_adc (
     .clk_i(clk_div_w),
     .start_i(start_w),
@@ -52,8 +53,6 @@ uart_readout i_uart_readout (
     .rx_i(uart_rx_i),
     .tx_o(uart_tx_o),
     .adc_start_o(start_w),
-    // .mic_spi_sample(dac_o),
-    // .mic_spi_sample_ready(rdy_w)
     .adc_sample(dac_o),
     .adc_sample_ready(rdy_w)
 );
